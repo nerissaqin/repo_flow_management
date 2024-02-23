@@ -1,9 +1,9 @@
-name: Feature branch push to dev branch
+name: local_to_remote_feature_branch_validation
 
 on:  
   push:
     branches:
-      - 'feature'
+      - 'feature*'
 
 jobs:
   push_check:
