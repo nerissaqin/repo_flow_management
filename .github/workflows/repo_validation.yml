@@ -1,1 +1,25 @@
-name: 
+name: Feature branch push to dev branch
+
+on:  
+  push:
+    branches:
+      - 'dev'
+
+jobs:
+  push_check:
+    name: push_to_dev_check
+    runs-on: ubuntu-latest
+
+    steps:
+      -name: Checkout Repo
+        uses: actions/checkout@3
+      
+      - name: Set up python
+        uses: actions/setup-python@v3
+
+      - name: run lint test
+        run: pylint --disable+C0301, R0913, R1705 sre/hello.py
+
+      
+
+
