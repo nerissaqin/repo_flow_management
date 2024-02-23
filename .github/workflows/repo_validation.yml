@@ -22,6 +22,7 @@ jobs:
           pip install flake8
 
       - name: run lint test
+        working-directory: ./src
         run: |
           flake8 hello.py
 
