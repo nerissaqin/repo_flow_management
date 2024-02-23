@@ -3,7 +3,7 @@ name: Feature branch push to dev branch
 on:  
   push:
     branches:
-      - 'dev'
+      - 'feature'
 
 jobs:
   push_check:
@@ -17,8 +17,13 @@ jobs:
       - name: Set up python
         uses: actions/setup-python@v3
 
+      - name: install dependencies
+        run: | 
+          pip install flake8
+
       - name: run lint test
-        run: pylint --disable+C0301, R0913, R1705 sre/hello.py
+        run: |
+          flake8 hello.py
 
       
 
