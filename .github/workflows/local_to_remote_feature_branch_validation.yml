@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - 'feature*'
+      - 'dev'
+      - 'main'
+
+  pull_request:
+    branches:
+      - 'main'
 
 jobs:
   push_check:
