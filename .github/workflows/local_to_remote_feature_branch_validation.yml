@@ -1,0 +1,31 @@
+name: local_to_remote_feature_branch_validation
+
+on:  
+  push:
+    branches:
+      - 'feature*'
+
+jobs:
+  push_check:
+    name: push_from local_to_feature_check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      
+      - name: Set up python
+        uses: actions/setup-python@v3
+
+      - name: install dependencies
+        run: | 
+          pip install flake8
+
+      - name: run lint test
+        working-directory: ./src
+        run: |
+          flake8 hello.py
+
+      
+
+
