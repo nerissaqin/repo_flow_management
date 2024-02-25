@@ -30,6 +30,7 @@ jobs:
             echo "Commit message must start with Jira number, e.g. 'JIRA123'."
             exit 1
           fi
+
       - name: Set up python
         uses: actions/setup-python@v3
 
@@ -37,6 +38,10 @@ jobs:
         run: | 
           pip install flake8
 
+      - name: Print Commit is done
+        run: | 
+          print "Commit is done"
+          
       - name: run lint test
         working-directory: ./src
         run: |
