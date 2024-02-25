@@ -12,7 +12,7 @@ on:
       - 'main'
 
 jobs:
-  push_check:
+  push_check:-
     name: push_from local_to_feature_check
     runs-on: ubuntu-latest
 
@@ -28,7 +28,7 @@ jobs:
           COMMIT_MSG=$(git log --format=%B -n 1 $GITHUB_SHA)
           if [[ ! "$COMMIT_MSG" =~ ^JIRA.* ]]; then
             echo "Commit message must start with Jira number, e.g. 'JIRA123'."
-            exit 1
+            exit 1‹
           fi
       - name: Set up python
         uses: actions/setup-python@v3
