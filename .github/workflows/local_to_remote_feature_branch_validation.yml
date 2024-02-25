@@ -40,8 +40,8 @@ jobs:
 
       - name: Print Commit is done
         run: | 
-          print "Commit is done"
-          
+          echo "Commit is done"s
+
       - name: run lint test
         working-directory: ./src
         run: |
