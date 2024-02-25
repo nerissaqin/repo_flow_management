@@ -12,7 +12,7 @@ on:
       - 'main'
 
 jobs:
-  push_check:-
+  push_check:
     name: push_from local_to_feature_check
     runs-on: ubuntu-latest
 
